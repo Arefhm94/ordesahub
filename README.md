@@ -1,6 +1,6 @@
-# TapLogBaby
+# BabyDaily
 
-This is the official website for **TapLogBaby**, a mobile application designed to help parents track their baby's daily activities.
+This is the official website for **BabyDaily**, a mobile application designed to help parents track their baby's daily activities.
 
 ## Features
 - Track feedings (breastfeeding, bottle, solids)

@@ -1,0 +1,303 @@
+:root {
+  /* Material 3 Light Theme Colors */
+  --md-sys-color-primary: #006b5b;
+  --md-sys-color-on-primary: #ffffff;
+  --md-sys-color-primary-container: #79f8dd;
+  --md-sys-color-on-primary-container: #00201a;
+  
+  --md-sys-color-secondary: #4a635d;
+  --md-sys-color-on-secondary: #ffffff;
+  --md-sys-color-secondary-container: #cce8e0;
+  --md-sys-color-on-secondary-container: #05201a;
+  
+  --md-sys-color-surface: #fbfdfa;
+  --md-sys-color-on-surface: #191c1b;
+  --md-sys-color-surface-variant: #dbe5e1;
+  --md-sys-color-on-surface-variant: #3f4946;
+  
+  --md-sys-color-background: #fbfdfa;
+  --md-sys-color-on-background: #191c1b;
+  --md-sys-color-outline: #6f7976;
+  
+  --md-elevation-1: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15);
+  --md-elevation-2: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+  
+  /* Typography */
+  --font-family: 'Roboto', system-ui, -apple-system, sans-serif;
+  --border-radius-large: 24px;
+  --border-radius-medium: 16px;
+  --border-radius-full: 9999px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Material 3 Dark Theme Colors */
+    --md-sys-color-primary: #59dbc2;
+    --md-sys-color-on-primary: #00382f;
+    --md-sys-color-primary-container: #005044;
+    --md-sys-color-on-primary-container: #79f8dd;
+    
+    --md-sys-color-secondary: #b1ccc4;
+    --md-sys-color-on-secondary: #1c352f;
+    --md-sys-color-secondary-container: #334b45;
+    --md-sys-color-on-secondary-container: #cce8e0;
+    
+    --md-sys-color-surface: #191c1b;
+    --md-sys-color-on-surface: #e0e3e1;
+    --md-sys-color-surface-variant: #3f4946;
+    --md-sys-color-on-surface-variant: #bfc9c5;
+    
+    --md-sys-color-background: #191c1b;
+    --md-sys-color-on-background: #e0e3e1;
+    --md-sys-color-outline: #89938f;
+    
+    --md-elevation-1: 0px 1px 2px 0px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15); /* Keep soft in dark mode, or use surface-container levels */
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 400; /* M3 favors normal weight for big headings */
+  color: var(--md-sys-color-on-surface);
+}
+
+/* App Bar / Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--md-sys-color-surface);
+  color: var(--md-sys-color-on-surface);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--md-sys-color-surface-variant);
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--md-sys-color-primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+nav a {
+  color: var(--md-sys-color-on-surface-variant);
+  text-decoration: none;
+  margin-left: 2rem;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: color 0.2s;
+}
+
+nav a:hover, nav a.active {
+  color: var(--md-sys-color-primary);
+}
+
+/* Main Layout */
+main {
+  padding: 2rem 2rem 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+  text-align: left;
+  padding: 4rem 0;
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  font-size: 1.125rem;
+  color: var(--md-sys-color-on-surface-variant);
+  max-width: 600px;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1.5rem;
+  height: 40px;
+  border-radius: var(--border-radius-full);
+  background: var(--md-sys-color-primary);
+  color: var(--md-sys-color-on-primary);
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.08)), var(--md-sys-color-primary);
+}
+
+/* Features Grid */
+.features-header {
+  margin: 4rem 0 2rem;
+}
+
+.features-header h2 {
+  font-size: 2rem;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background-color: var(--md-sys-color-surface-variant);
+  color: var(--md-sys-color-on-surface-variant);
+  padding: 1.5rem;
+  border-radius: var(--border-radius-large);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-wrapper {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--border-radius-medium);
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--md-sys-color-on-surface);
+}
+
+.feature-card p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Policy Content Layout */
+.page-header {
+  margin-bottom: 2rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-header p {
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 1.125rem;
+}
+
+.policy-card {
+  background: var(--md-sys-color-surface);
+  /* M3 outlines rather than heavy cards for reading content */
+}
+
+.policy-card h2 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--md-sys-color-primary);
+  font-weight: 500;
+}
+
+.policy-card p, .policy-card li {
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.policy-card ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.policy-card li {
+  margin-bottom: 0.5rem;
+}
+
+.legal-notice {
+  background: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  padding: 1rem 1.5rem;
+  border-radius: var(--border-radius-medium);
+  margin: 1.5rem 0;
+}
+
+.legal-notice p {
+  color: inherit;
+  margin: 0;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 2rem;
+  background-color: var(--md-sys-color-surface-variant);
+  color: var(--md-sys-color-on-surface-variant);
+  margin-top: 4rem;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+footer .logo {
+  font-size: 1rem;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+footer p {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .hero h1 { font-size: 2.5rem; }
+  nav a { margin-left: 1rem; }
+  .features { grid-template-columns: 1fr; }
+  main { padding: 1.5rem; }
+  header { padding: 1rem 1.5rem; }
+}
