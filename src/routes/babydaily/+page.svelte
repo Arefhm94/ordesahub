@@ -40,7 +40,7 @@
 </section>
 
 <!-- Call to Action -->
-<section class="py-24 bg-primary text-primary-foreground">
+<section id="faq" class="py-24 bg-primary text-primary-foreground">
   <div class="container mx-auto px-4 text-center space-y-8">
     <h2 class="text-4xl md:text-6xl font-extrabold tracking-tight">
       Ready to simplify parenting?

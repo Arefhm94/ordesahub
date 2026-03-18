@@ -61,7 +61,7 @@
   ];
 </script>
 
-<section id="features" class="py-24 bg-slate-50/50 dark:bg-slate-900/50">
+<section id="features" class="py-24 bg-white dark:bg-slate-900">
   <div class="container mx-auto px-4">
     <div class="text-center space-y-4 mb-16">
       <h2 class="text-3xl md:text-5xl font-bold tracking-tight">
