@@ -64,8 +64,8 @@
         <!-- BabyDaily Card -->
         <a href="{base}/babydaily/" class="group block relative overflow-hidden rounded-3xl bg-card/50 border transition-all hover:shadow-2xl hover:-translate-y-2 duration-300">
           <div class="aspect-video w-full bg-primary/10 flex items-center justify-center p-12 overflow-hidden relative">
-            <div class="bg-card p-6 rounded-3xl shadow-xl transition-transform group-hover:scale-110 duration-500">
-              <Baby class="h-16 w-16 text-primary" />
+            <div class="bg-card rounded-3xl shadow-xl transition-transform group-hover:scale-110 duration-500 overflow-hidden">
+              <img src="{base}/icon.png" alt="BabyDaily App Icon" class="h-24 w-24 object-cover" />
             </div>
             <div class="absolute top-10 right-10 bg-card p-3 rounded-xl shadow-lg animate-bounce" style="animation-duration:3s">
               <div class="h-2 w-12 bg-primary/20 rounded-full mb-2"></div>
