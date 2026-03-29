@@ -4,13 +4,12 @@
     CardContent,
     CardHeader,
     CardTitle,
-    CardDescription,
   } from "$lib/components/ui/card";
   import {
     Smartphone,
     Users,
     Clock,
-    BarChart3,
+    TrendingUp,
     ShieldCheck,
     Zap,
   } from "lucide-svelte";
@@ -19,49 +18,50 @@
     {
       title: "Home Screen Widgets",
       description:
-        "Log a diaper change or feed without even opening the app. Use interactive widgets for speed.",
+        "Log a diaper change, feed, or sleep directly from your iPhone home screen — without even opening the app.",
       icon: Smartphone,
       color: "bg-blue-500/10 text-blue-500",
     },
     {
-      title: "Partner Syncing",
+      title: "Real-Time Partner Sync",
       description:
-        "Invite your partner and share a single profile. Data syncs instantly across all devices.",
+        "Invite your partner or caregiver via email. Every log syncs in under a second across all devices, automatically.",
       icon: Users,
       color: "bg-purple-500/10 text-purple-500",
     },
     {
-      title: "Reliable Timers",
+      title: "Live Activities & Timers",
       description:
-        "Sleep and nursing timers run in the background and show up on your lock screen with Live Activities.",
+        "Sleep, bath, and play timers persist on your Lock Screen and in the Dynamic Island so you never lose track.",
       icon: Clock,
       color: "bg-green-500/10 text-green-500",
     },
     {
-      title: "Daily Summaries",
+      title: "Insights & Growth Tracking",
       description:
-        "Beautifully visualized data helps you understand sleep patterns and feeding trends at a glance.",
-      icon: BarChart3,
+        "7, 14, and 30-day trend charts, a 24-hour activity clock, weekly heatmaps, and a full growth chart with BMI.",
+      icon: TrendingUp,
       color: "bg-orange-500/10 text-orange-500",
     },
     {
       title: "Secure & Private",
       description:
-        "Data is encrypted and synced securely via Supabase. Privacy is guaranteed; data is never shared or sold.",
+        "Row-Level Security ensures only you and your invited partner can ever access your data. Nothing is sold or shared.",
       icon: ShieldCheck,
       color: "bg-red-500/10 text-red-500",
     },
     {
-      title: "Native Performance",
+      title: "AI-Powered Predictions",
       description:
-        "Built with Swift and SwiftUI for the best possible experience on your iOS devices.",
+        "The Smart Card analyses the past 14 days of logs to predict your baby's next sleep and feeding window.",
       icon: Zap,
       color: "bg-yellow-500/10 text-yellow-500",
     },
   ];
 </script>
 
-<section id="features" class="py-24 bg-white dark:bg-slate-900">
+<section id="features" class="py-24 bg-background relative overflow-hidden">
+  <div class="absolute inset-x-0 top-0 h-40 bg-linear-to-b from-indigo-500/5 to-transparent pointer-events-none"></div>
   <div class="container mx-auto px-4">
     <div class="text-center space-y-4 mb-16">
       <h2 class="text-3xl md:text-5xl font-bold tracking-tight">
@@ -80,7 +80,7 @@
           style="animation-delay: {i * 100}ms"
         >
           <Card
-            class="h-full border-none shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-background/50 backdrop-blur"
+            class="h-full border-none shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 bg-background"
           >
             <CardHeader>
               <div

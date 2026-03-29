@@ -22,20 +22,62 @@
     { src: ss9, label: 'Insights (Dark)' },
     { src: ss10, label: 'Home Page (Dark)' }
   ];
+
+  function dragScroll(node: HTMLElement) {
+    let isDragging = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+
+    function onMouseDown(e: MouseEvent) {
+      isDragging = true;
+      startX = e.pageX - node.offsetLeft;
+      startScrollLeft = node.scrollLeft;
+      node.style.cursor = 'grabbing';
+    }
+    function onMouseMove(e: MouseEvent) {
+      if (!isDragging) return;
+      e.preventDefault();
+      node.scrollLeft = startScrollLeft - (e.pageX - node.offsetLeft - startX);
+    }
+    function onStop() {
+      isDragging = false;
+      node.style.cursor = 'grab';
+    }
+
+    node.style.cursor = 'grab';
+    node.addEventListener('mousedown', onMouseDown);
+    node.addEventListener('mousemove', onMouseMove);
+    node.addEventListener('mouseup', onStop);
+    node.addEventListener('mouseleave', onStop);
+
+    return {
+      destroy() {
+        node.removeEventListener('mousedown', onMouseDown);
+        node.removeEventListener('mousemove', onMouseMove);
+        node.removeEventListener('mouseup', onStop);
+        node.removeEventListener('mouseleave', onStop);
+      }
+    };
+  }
 </script>
 
-<section class="pt-32 pb-24 bg-[#f0ede8]">
-  <div class="container mx-auto px-4 text-center mb-16 space-y-4">
-    <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-slate-900">App Interface</h2>
-    <p class="text-slate-500 max-w-2xl mx-auto">Experience the beautiful and intuitive design of BabyDaily, crafted specifically for the modern parent.</p>
+<section class="pt-16 pb-24 bg-background relative overflow-hidden">
+  <div class="absolute inset-0 bg-linear-to-b from-indigo-500/5 via-transparent to-indigo-500/5 opacity-50"></div>
+  <div class="container mx-auto px-4 text-center mb-12 space-y-4">
+    <h2 class="text-3xl md:text-5xl font-bold tracking-tight">App Interface</h2>
+    <p class="text-muted-foreground max-w-2xl mx-auto">Experience the beautiful and intuitive design of BabyDaily, crafted specifically for the modern parent.</p>
   </div>
 
-  <div class="w-full flex flex-nowrap overflow-x-auto pt-12 pb-12 gap-10 snap-x no-scrollbar px-6 md:px-16 cursor-grab active:cursor-grabbing">
+  <div
+    use:dragScroll
+    class="w-full flex flex-nowrap overflow-x-auto pt-8 pb-12 gap-10 snap-x no-scrollbar px-6 md:px-16 select-none"
+    aria-label="App screenshots"
+  >
     {#each screenshots as screenshot}
-      <div class="flex-none w-[260px] flex flex-col items-center gap-6 snap-start transition-transform hover:scale-105 duration-300">
+      <div class="flex-none w-65 flex flex-col items-center gap-6 snap-start transition-transform hover:scale-105 duration-300">
         <div class="phone">
           <div class="screen">
-            <img src={screenshot.src} alt={screenshot.label} />
+            <img src={screenshot.src} alt={screenshot.label} draggable="false" />
           </div>
           <div class="dynamic-island"></div>
           <div class="glare"></div>
@@ -44,7 +86,7 @@
       </div>
     {/each}
     <!-- End Spacer -->
-    <div class="flex-none w-6 md:w-16 h-1"></div>
+    <div class="flex-none w-6 md:w-16 h-1" aria-hidden="true"></div>
   </div>
 </section>
 

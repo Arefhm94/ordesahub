@@ -7,8 +7,8 @@
 </script>
 
 <svelte:head>
-  <title>BabyDaily | Baby Tracker by OrdesaHub</title>
-  <meta name="description" content="A fast, native baby tracker for iOS. Log feedings, diapers, and sleep right from your home screen. Proudly made by OrdesaHub." />
+  <title>OrdesaHub | Native Apps, Refined</title>
+  <meta name="description" content="OrdesaHub builds high-performance, beautiful native applications. Home of BabyDaily — the smartest baby tracker for iOS." />
 </svelte:head>
 
 <div class="flex min-h-screen flex-col">

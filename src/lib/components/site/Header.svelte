@@ -8,14 +8,14 @@
   <div class="container flex h-16 items-center justify-between mx-auto px-4">
     <div class="flex items-center gap-8">
       <a href="{base}/" class="flex items-center space-x-2 group">
-        <div class="bg-foreground p-1 rounded-lg transition-transform group-hover:scale-110">
-          <Activity class="h-5 w-5 text-background" />
+        <div class="bg-primary p-1 rounded-lg transition-transform group-hover:scale-110">
+          <Activity class="h-5 w-5 text-primary-foreground" />
         </div>
         <span class="inline-block font-extrabold text-xl tracking-tighter">OrdesaHub</span>
       </a>
-      
+
       <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
-        <a href="{base}/babydaily" class="flex items-center gap-2 transition-colors hover:text-primary text-muted-foreground">
+        <a href="{base}/babydaily/" class="flex items-center gap-2 transition-colors hover:text-primary text-muted-foreground">
           <Baby class="h-4 w-4" />
           <span>BabyDaily</span>
         </a>
@@ -23,9 +23,9 @@
         <a href="{base}/#portfolio" class="transition-colors hover:text-primary text-muted-foreground">Portfolio</a>
       </nav>
     </div>
-    
-    <div class="flex items-center gap-4">
-      <Button variant="default" class="rounded-full px-6 bg-primary text-primary-foreground">Get App</Button>
-    </div>
+
+    <Button href="mailto:arefsn89@gmail.com" variant="default" class="rounded-full px-6">
+      Get in Touch
+    </Button>
   </div>
 </header>
