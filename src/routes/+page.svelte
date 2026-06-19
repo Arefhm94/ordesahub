@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Button } from '$lib/components/ui/button';
-  import { Baby, Activity, Code, Globe, Shield, Zap, ExternalLink } from 'lucide-svelte';
+  import { Baby, Activity, Map, Globe, Shield, Zap, ExternalLink } from 'lucide-svelte';
   import { base } from '$app/paths';
 </script>
 
@@ -93,18 +93,40 @@
           </div>
         </a>
 
-        <!-- Coming Soon -->
-        <div class="relative overflow-hidden rounded-3xl bg-muted/30 border-2 border-dashed flex flex-col items-center justify-center p-12 text-center space-y-6 min-h-80">
-          <div class="w-20 h-20 rounded-full bg-muted flex items-center justify-center">
-            <Code class="h-10 w-10 text-muted-foreground" />
+        <!-- MapFetcher Card -->
+        <a href="{base}/mapfetcher/" class="group block relative overflow-hidden rounded-3xl bg-card/50 border transition-all hover:shadow-2xl hover:-translate-y-2 duration-300">
+          <div class="aspect-video w-full bg-primary/10 flex items-center justify-center p-12 overflow-hidden relative">
+            <div class="bg-card rounded-3xl shadow-xl transition-transform group-hover:scale-110 duration-500 overflow-hidden flex items-center justify-center">
+              <div class="h-20 w-20 rounded-2xl bg-gradient-to-br from-indigo-500/30 to-slate-800 flex items-center justify-center">
+                <Map class="h-10 w-10 text-indigo-400" />
+              </div>
+            </div>
+            <div class="absolute top-10 right-10 bg-card p-3 rounded-xl shadow-lg" style="animation-duration:3s">
+              <div class="flex gap-1 mb-2">
+                <div class="h-2 w-2 rounded-full bg-emerald-400"></div>
+                <div class="h-2 w-2 rounded-full bg-blue-400"></div>
+                <div class="h-2 w-2 rounded-full bg-orange-400"></div>
+              </div>
+              <div class="h-2 w-8 bg-slate-200/20 rounded-full"></div>
+            </div>
+            <div class="absolute bottom-10 left-10 bg-card p-3 rounded-xl shadow-lg">
+              <div class="h-2 w-10 bg-indigo-400/30 rounded-full mb-2"></div>
+              <div class="h-2 w-6 bg-slate-200/20 rounded-full"></div>
+            </div>
           </div>
-          <div>
-            <h3 class="text-2xl font-bold text-muted-foreground">Coming Soon</h3>
-            <p class="text-muted-foreground max-w-xs mx-auto mt-2 text-sm">
-              Currently developing the next application. Stay tuned.
-            </p>
+          <div class="p-8 space-y-4">
+            <div class="flex justify-between items-start">
+              <div class="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-400 text-xs font-bold uppercase tracking-widest">Web App</div>
+              <ExternalLink class="h-5 w-5 text-slate-400 transition-colors group-hover:text-primary" />
+            </div>
+            <div>
+              <h3 class="text-2xl font-black tracking-tight">MapFetcher</h3>
+              <p class="text-muted-foreground leading-relaxed mt-1">
+                Fullscreen 3D map viewer with building extrusions, terrain, contour lines, and one-click export to GeoJSON, OBJ, DXF, and GeoTIFF.
+              </p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>

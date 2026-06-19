@@ -25,6 +25,7 @@
         <h3 class="font-bold mb-4 text-sm uppercase tracking-wider">Product</h3>
         <ul class="space-y-3 text-sm">
           <li><a href="{base}/#features" class="text-muted-foreground hover:text-primary transition-colors">Features</a></li>
+          <li><a href="{base}/mapfetcher/" class="text-muted-foreground hover:text-primary transition-colors">MapFetcher</a></li>
           <li><a href="{base}/#about" class="text-muted-foreground hover:text-primary transition-colors">About</a></li>
           <li><a href="{base}/kiko/privacy/" class="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</a></li>
           <li><a href="{base}/kiko/terms/" class="text-muted-foreground hover:text-primary transition-colors">Terms of Use</a></li>

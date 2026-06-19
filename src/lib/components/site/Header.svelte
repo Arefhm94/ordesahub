@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Button } from "$lib/components/ui/button";
-  import { Baby, Activity } from "lucide-svelte";
+  import { Baby, Activity, Map } from "lucide-svelte";
   import { base } from "$app/paths";
 </script>
 
@@ -18,6 +18,10 @@
         <a href="{base}/kiko/" class="flex items-center gap-2 transition-colors hover:text-primary text-muted-foreground">
           <Baby class="h-4 w-4" />
           <span>Kiko – Baby Tracker</span>
+        </a>
+        <a href="{base}/mapfetcher/" class="flex items-center gap-2 transition-colors hover:text-primary text-muted-foreground">
+          <Map class="h-4 w-4" />
+          <span>MapFetcher</span>
         </a>
         <a href="{base}/#about" class="transition-colors hover:text-primary text-muted-foreground">About</a>
         <a href="{base}/#portfolio" class="transition-colors hover:text-primary text-muted-foreground">Portfolio</a>
