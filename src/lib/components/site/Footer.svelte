@@ -1,19 +1,41 @@
 <script lang="ts">
-  import { Baby, Activity, Mail } from "lucide-svelte";
+  import { Baby, Activity, Mail, Map } from "lucide-svelte";
   import { base } from "$app/paths";
+  import { page } from "$app/stores";
+
+  const isKikoPage = $derived($page.url.pathname.startsWith("/kiko"));
+  const isMapFetcherPage = $derived($page.url.pathname.startsWith("/mapfetcher"));
 </script>
 
 <footer class="border-t bg-background">
   <div class="container mx-auto px-4 py-12 md:py-16">
     <div class="grid grid-cols-1 gap-12 md:grid-cols-4">
       <div class="col-span-1 md:col-span-2 space-y-4">
-        <div class="flex items-center space-x-2">
-          <Baby class="h-6 w-6 text-primary" />
-          <span class="font-bold text-xl">Kiko – Baby Tracker</span>
-        </div>
-        <p class="text-muted-foreground text-sm max-w-xs">
-          Empowering parents with real-time baby tracking. A proud product of <span class="font-semibold text-foreground">OrdesaHub</span>.
-        </p>
+        {#if isMapFetcherPage}
+          <div class="flex items-center space-x-2">
+            <Map class="h-6 w-6 text-primary" />
+            <span class="font-bold text-xl">MapFetcher</span>
+          </div>
+          <p class="text-muted-foreground text-sm max-w-xs">
+            Interactive 3D map viewer and geo-data extraction tool. A proud product of <span class="font-semibold text-foreground">OrdesaHub</span>.
+          </p>
+        {:else if isKikoPage}
+          <div class="flex items-center space-x-2">
+            <Baby class="h-6 w-6 text-primary" />
+            <span class="font-bold text-xl">Kiko – Baby Tracker</span>
+          </div>
+          <p class="text-muted-foreground text-sm max-w-xs">
+            Empowering parents with real-time baby tracking. A proud product of <span class="font-semibold text-foreground">OrdesaHub</span>.
+          </p>
+        {:else}
+          <div class="flex items-center space-x-2">
+            <Activity class="h-6 w-6 text-primary" />
+            <span class="font-bold text-xl">OrdesaHub</span>
+          </div>
+          <p class="text-muted-foreground text-sm max-w-xs">
+            Building high-performance, beautiful native applications and developer tools.
+          </p>
+        {/if}
         <div class="flex space-x-4 pt-2">
           <a href="mailto:arefsn89@gmail.com" class="text-muted-foreground hover:text-primary transition-colors">
             <Mail class="h-5 w-5" />
